@@ -1,0 +1,4 @@
+# Avoid the project being littered with unnecessary files.
+.DS_Store
+assets/.DS_Store
+

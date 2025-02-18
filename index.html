@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FavIcon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Linear Gradient Generator</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="main-tittle">Linear Gradient Generator</h1>
+    </header>
+    <main id="main" class="main">
+      <div class="card-wrapper">
+        <div class="card">
+          <div id="gradient-preview" class="gradient-preview"></div>
+          <div class="input-buttons">
+            <div class="direction-selector">
+              <label for="direction">Direction</label>
+              <select name="direction" id="direction" class="direction">
+                <option name="top-left" value="135deg">Top Left</option>
+                <option name="top" value="180deg">Top</option>
+                <option name="top-right" value="225deg">Top Right</option>
+                <option name="right" value="270deg">Left</option>
+                <option name="bottom-right" value="315deg">Bottom Right</option>
+                <option name="bottom" value="0deg">Bottom</option>
+                <option name="bottom-left" value="45deg">Bottom Left</option>
+                <option name="left" value="90deg">Left</option>
+              </select>
+            </div>
+            <div class="color-picker">
+              <label for="color">Colors</label>
+              <div class="input-colors">
+                <input type="color" id="color-one" class="color-one" />
+                <input type="color" id="color-two" class="color-two" />
+              </div>
+            </div>
+          </div>
+          <div id="result-input" class="result-input">
+            <input type="text" id="result" class="result">
+          </div>
+          <div id="action-buttons">
+            <button id="copy-button" class="copy-button">Copy Css Result</button>
+            <button id="reset-button" class="reset-button">Reset New Colors</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
