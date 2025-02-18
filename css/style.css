@@ -51,8 +51,11 @@ html {
 }
 
 body {
-  background-color: var(--white-color);
-  color: var(--black-color);
+  background: #1382a8;
+  background: linear-gradient(135deg, #1382a8, #ca606d);
+  color: var(--white-color);
+  background-repeat: no-repeat;
+  height: 100dvh;
 }
 
 h1 {
@@ -77,3 +80,147 @@ button {
   font-weight: 500;
 }
 
+/* Header Style */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--spacing-3);
+  margin-top: var(--spacing-5);
+}
+
+.main-tittle {
+  text-align: center;
+  line-height: 30px;
+  min-width: 400px;
+  margin-top: var(--spacing-6);
+}
+
+/* Main Style */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Wrapper */
+.card-wrapper {
+  margin-top: var(--spacing-7);
+  width: 400px;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--white-color);
+  padding: var(--spacing-3);
+  margin: var(--spacing-3);
+  min-width: 325px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-2);
+}
+
+.gradient-preview {
+  background: #1382a8;
+  background: linear-gradient(135deg, #1382a8, #ca606d);
+  height: 110px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: var(--spacing-1) 0;
+}
+
+.input-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-buttons > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-names {
+  font-weight: 400;
+  color: var(--black-color);
+}
+
+.direction-selector {
+  margin-right: var(--spacing-2);
+}
+
+.direction {
+  height: 30px;
+  width: 120px;
+  padding-left: 8px;
+  background-color: rgb(59, 59, 59);
+  color: var(--white-color);
+  border-radius: 4px;
+}
+
+.color-picker {
+  text-align: right;
+}
+
+.colors {
+  width: 30px;
+  height: 30px;
+}
+
+.result {
+  width: 100%;
+  height: 70px;
+  margin: var(--spacing-2) 0;
+  padding: 10px;
+  resize: none;
+  border: 1px solid var(--black-color);
+  border-radius: 4px;
+}
+
+.result:focus {
+  text-decoration: none;
+  outline: none;
+}
+.result:active {
+  text-emphasis: none;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-2) 0;
+}
+
+.action-buttons > button {
+  height: 30px;
+  width: 135px;
+  background-color: var(--black-color);
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: var(--white-color);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: none;
+  min-height: 40px;
+  min-width: 10px;
+  outline: none;
+  text-align: center;
+  text-transform: none;
+  opacity: 0.8;
+}
+
+.action-buttons > button:hover,
+.action-buttons > button:focus {
+  opacity: 1;
+}
+
+.copy-button {
+  background: #1382a8;
+  background: linear-gradient(135deg, #1382a8, #ca606d);
+}

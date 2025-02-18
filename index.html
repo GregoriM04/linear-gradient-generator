@@ -44,9 +44,9 @@
           <div id="gradient-preview" class="gradient-preview"></div>
           <div class="input-buttons">
             <div class="direction-selector">
-              <label for="direction">Direction</label>
+              <label for="direction" class="label-names">Direction</label>
               <select name="direction" id="direction" class="direction">
-                <option name="top-left" value="135deg">Top Left</option>
+                <option name="top-left" value="135deg" selected>Top Left</option>
                 <option name="top" value="180deg">Top</option>
                 <option name="top-right" value="225deg">Top Right</option>
                 <option name="right" value="270deg">Left</option>
@@ -57,17 +57,17 @@
               </select>
             </div>
             <div class="color-picker">
-              <label for="color">Colors</label>
+              <label for="color" class="label-names">Colors</label>
               <div class="input-colors">
-                <input type="color" id="color-one" class="color-one" />
-                <input type="color" id="color-two" class="color-two" />
+                <input type="color" id="color-one" class="color-one colors" value="#1382A8"/>
+                <input type="color" id="color-two" class="color-two colors"  value="#CA606D"/>
               </div>
             </div>
           </div>
           <div id="result-input" class="result-input">
-            <input type="text" id="result" class="result">
+            <textarea type="text" id="result" class="result" cols="6" rows="2" readonly></textarea>
           </div>
-          <div id="action-buttons">
+          <div id="action-buttons" class="action-buttons">
             <button id="copy-button" class="copy-button">Copy Css Result</button>
             <button id="reset-button" class="reset-button">Reset New Colors</button>
           </div>
