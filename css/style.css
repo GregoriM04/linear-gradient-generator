@@ -30,6 +30,9 @@
   /* Box-shadow */
   --shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
 
+  /* Text-shadow */
+  --text-shadow: 2px 2px 2px var(--black-color);
+
   /* typography size */
   --ty-size-h1: 2.125rem; /* 34px */
   --ty-size-h2: 1.6rem; /* 25.6px */
@@ -95,6 +98,7 @@ button {
   line-height: 30px;
   min-width: 400px;
   margin-top: var(--spacing-6);
+  text-shadow: var(--text-shadow);
 }
 
 /* Main Style */
@@ -131,6 +135,10 @@ button {
   cursor: pointer;
   border-radius: 4px;
   margin: var(--spacing-1) 0;
+}
+
+.gradient-preview:hover {
+  opacity: 0.8;
 }
 
 .input-buttons {
@@ -213,6 +221,7 @@ button {
   text-align: center;
   text-transform: none;
   opacity: 0.8;
+  text-shadow: var(--text-shadow);
 }
 
 .action-buttons > button:hover,
