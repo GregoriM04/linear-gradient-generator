@@ -171,11 +171,82 @@ button {
 
 .color-picker {
   text-align: right;
+  position: relative;
 }
 
-.colors {
+.input-colors {
+  display: flex;
+  gap: 5px;
+}
+
+.color-one,
+.color-two {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--black-color);
+}
+
+.color-one {
+  background: #1382a8;
+}
+
+.color-two {
+  background: #ca606d;
+}
+
+.color-wheel-container {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: var(--white-color);
+  bottom: 55px;
+  right: 25px;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  transition: var(--trans-5s);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.color-wheel {
+  cursor: crosshair;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.selected-color-box-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: var(--trans-5s);
+}
+
+.selected-color-box {
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  display: inline-block;
+  background: #1382a8;
+  transition: var(--trans-3s);
+}
+
+.selected-color-text {
+  display: block;
+  margin-top: 10px;
+  color: var(--black-color);
+  transition: var(--trans-5s);
+}
+
+.selected-color-text:active,
+.selected-color-text:focus {
+  outline: none;
 }
 
 .result {

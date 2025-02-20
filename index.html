@@ -46,30 +46,50 @@
             <div class="direction-selector">
               <label for="direction" class="label-names">Direction</label>
               <select name="direction" id="direction" class="direction">
-                <option name="top-left" value="135deg" selected>Top Left</option>
+                <option name="top-left" value="135deg" selected>
+                  Top Left
+                </option>
                 <option name="top" value="180deg">Top</option>
                 <option name="top-right" value="225deg">Top Right</option>
-                <option name="right" value="270deg">Left</option>
+                <option name="right" value="270deg">Right</option>
                 <option name="bottom-right" value="315deg">Bottom Right</option>
                 <option name="bottom" value="0deg">Bottom</option>
                 <option name="bottom-left" value="45deg">Bottom Left</option>
                 <option name="left" value="90deg">Left</option>
               </select>
             </div>
-            <div class="color-picker">
+            <div id="color-picker" class="color-picker">
               <label for="color" class="label-names">Colors</label>
               <div class="input-colors">
-                <input type="color" id="color-one" class="color-one colors" value="#1382A8"/>
-                <input type="color" id="color-two" class="color-two colors"  value="#CA606D"/>
+                <div id="color-one" class="color-one"></div>
+                <div id="color-two" class="color-two"></div>
+              </div>
+              <div id="color-wheel-container" class="color-wheel-container">
+                <canvas id="color-wheel" width="150" height="150" class="color-wheel"></canvas>
+                <div id="selected-color-box-container" class="selected-color-box-container">
+                  <div id="selected-color-box" class="selected-color-box"></div>
+                  <input type="text" value="#1382A8" id="selected-color-text" class="selected-color-text" maxlength="7">
+                </div>
               </div>
             </div>
           </div>
           <div id="result-input" class="result-input">
-            <textarea type="text" id="result" class="result" cols="6" rows="2" readonly></textarea>
+            <textarea
+              type="text"
+              id="result"
+              class="result"
+              cols="6"
+              rows="2"
+              readonly
+            ></textarea>
           </div>
           <div id="action-buttons" class="action-buttons">
-            <button id="copy-button" class="copy-button">Copy Css Result</button>
-            <button id="reset-button" class="reset-button">Reset New Colors</button>
+            <button id="copy-button" class="copy-button">
+              Copy Css Result
+            </button>
+            <button id="reset-button" class="reset-button">
+              Reset New Colors
+            </button>
           </div>
         </div>
       </div>
