@@ -10,10 +10,13 @@ const colorWheelContainer = document.querySelector("#color-wheel-container");
 const colorWheelBoxContainer = document.querySelector(
   "#selected-color-box-container"
 );
-const selectedColorBoxContainer = document.querySelector("#selected-color-box-container")
+const selectedColorBoxContainer = document.querySelector(
+  "#selected-color-box-container"
+);
 const selectedColorBox = document.querySelector("#selected-color-box");
 const selectedColorText = document.querySelector("#selected-color-text");
 
+// generate/set random linear gradient as soon as the DOM loads
 document.addEventListener("DOMContentLoaded", setGradient);
 
 // FUNCTIONS
@@ -224,11 +227,17 @@ canvas.addEventListener("click", (event) => {
   const newColor = rgbToHex(color);
   if (whichColor == 1) {
     randomGradient[0] = newColor;
+    selectedColorBox.style.backgroundColor = newColor;
     setGradient();
   } else if (whichColor == 2) {
     randomGradient[1] = newColor;
+    selectedColorBox.style.backgroundColor = newColor;
     setGradient();
   }
+
+  // close colorWheel when color is selected
+  colorWheelContainer.style.display = "none";
+  selectedColorBoxContainer.style.display = "none";
 
   if (color !== "rgb(0, 0, 0)") {
     // Avoid clicking outside the wheel
@@ -236,8 +245,6 @@ canvas.addEventListener("click", (event) => {
     selectedColorText.value = rgbToHex(color);
   }
 });
-
-
 
 let whichColor = 0; // needed to check which option color was selected before changed
 colorPickerContainer.addEventListener("click", (e) => {
@@ -248,7 +255,6 @@ colorPickerContainer.addEventListener("click", (e) => {
     whichColor = 2; // second option
   }
 });
-
 
 // handle the manual input in the colorWheel / Canvas
 selectedColorText.addEventListener("keypress", (e) => {
@@ -269,5 +275,26 @@ selectedColorText.addEventListener("keypress", (e) => {
         setGradient();
       }
     }
+  }
+});
+
+// event to set new colors while hovering the colorWheel
+canvas.addEventListener("mousemove", (event) => {
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const color = getColorAtPosition(x, y);
+
+  const newColor = rgbToHex(color);
+  if (whichColor == 1) {
+    randomGradient[0] = newColor;
+    selectedColorBox.style.backgroundColor = newColor;
+    selectedColorText.value = newColor;
+    setGradient();
+  } else if (whichColor == 2) {
+    randomGradient[1] = newColor;
+    selectedColorBox.style.backgroundColor = newColor;
+    selectedColorText.value = newColor;
+    setGradient();
   }
 });

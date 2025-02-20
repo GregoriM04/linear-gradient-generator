@@ -186,6 +186,7 @@ button {
   cursor: pointer;
   box-shadow: var(--shadow);
   border: 1px solid var(--black-color);
+  transition: var(--trans-3s);
 }
 
 .color-one {
@@ -223,7 +224,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: var(--trans-5s);
+  transition: var(--trans-3s);
 }
 
 .selected-color-box {
