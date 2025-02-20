@@ -287,12 +287,10 @@ canvas.addEventListener("mousemove", (event) => {
 
   const newColor = rgbToHex(color);
   if (whichColor == 1) {
-    randomGradient[0] = newColor;
     selectedColorBox.style.backgroundColor = newColor;
     selectedColorText.value = newColor;
     setGradient();
   } else if (whichColor == 2) {
-    randomGradient[1] = newColor;
     selectedColorBox.style.backgroundColor = newColor;
     selectedColorText.value = newColor;
     setGradient();
