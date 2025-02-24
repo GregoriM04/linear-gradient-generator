@@ -1,5 +1,7 @@
 const body = document.querySelector("body");
+const invalidInputCode = document.querySelector("#invalid-code-input");
 const previewBox = document.querySelector("#gradient-preview");
+const previewBoxCopyText = document.querySelector("#gradient-preview-copy");
 const inputDirection = document.querySelector("#direction");
 const colorOne = document.querySelector("#color-one");
 const colorTwo = document.querySelector("#color-two");
@@ -86,14 +88,24 @@ function setDegree() {
 }
 
 // copy the result gradient
-function copyResult() {
-  return (
-    navigator.clipboard.writeText(input.value),
-    (copyButton.innerText = "Copied!"),
-    setTimeout(() => {
-      copyButton.innerText = "Copy Css Result";
-    }, 2000)
-  );
+function copyResult(str) {
+  if (str === "button") {
+    return (
+      navigator.clipboard.writeText(input.value),
+      (copyButton.innerText = "Copied!"),
+      setTimeout(() => {
+        copyButton.innerText = "Copy Css Result";
+      }, 2000)
+    );
+  } else if (str === "preview") {
+    return (
+      navigator.clipboard.writeText(input.value),
+      (previewBoxCopyText.innerText = "Copied!"),
+      setTimeout(() => {
+        previewBoxCopyText.innerText = "Copy";
+      }, 2000)
+    );
+  }
 }
 
 // EVENT LISTENERS
@@ -104,8 +116,12 @@ inputDirection.addEventListener("change", () => {
 });
 
 // copy result to the clipboard
-copyButton.addEventListener("click", copyResult);
-previewBox.addEventListener("click", copyResult);
+copyButton.addEventListener("click", () => {
+  copyResult("button");
+});
+previewBox.addEventListener("click", () => {
+  copyResult("preview");
+});
 
 // get new random gradient
 resetButton.addEventListener("click", () => {
@@ -261,9 +277,28 @@ selectedColorText.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     let newValue = selectedColorText.value;
     if (newValue[0] !== "#") {
-      return console.log(`Your code must have '#' at the beginning.`);
+      return (
+        (colorWheelContainer.style.display = "none"),
+        (selectedColorBoxContainer.style.display = "none"),
+        (invalidInputCode.style.display = "block"),
+        (invalidInputCode.innerText =
+          "Your code must have '#' at the beginning."),
+        setTimeout(() => {
+          invalidInputCode.innerText = "Invalid code, try again!";
+          invalidInputCode.style.display = "none";
+        }, 3000)
+      );
     } else if (newValue.length < 7) {
-      return console.log(`Your code must have 6 hex characters.`);
+      return (
+        (colorWheelContainer.style.display = "none"),
+        (selectedColorBoxContainer.style.display = "none"),
+        (invalidInputCode.style.display = "block"),
+        (invalidInputCode.innerText = "Your code must have 6 hex characters."),
+        setTimeout(() => {
+          invalidInputCode.innerText = "Invalid code, try again!";
+          invalidInputCode.style.display = "none";
+        }, 3000)
+      );
     } else {
       if (whichColor == 1) {
         randomGradient[0] = newValue;

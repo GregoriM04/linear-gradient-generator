@@ -116,6 +116,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.invalid-code-input {
+  position: absolute;
+  text-shadow: var(--text-shadow);
+  top: -12px;
+  display: none;
 }
 
 .card {
@@ -135,10 +144,21 @@ button {
   cursor: pointer;
   border-radius: 4px;
   margin: var(--spacing-1) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gradient-preview:hover {
-  opacity: 0.8;
+  opacity: 0.95;
+}
+
+.gradient-preview-copy {
+  display: none;
+}
+
+.gradient-preview:hover .gradient-preview-copy {
+  display: block;
 }
 
 .input-buttons {

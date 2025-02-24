@@ -40,8 +40,15 @@
     </header>
     <main id="main" class="main">
       <div class="card-wrapper">
+        <div id="invalid-code-input" class="invalid-code-input">
+          Invalid code, try again!
+        </div>
         <div class="card">
-          <div id="gradient-preview" class="gradient-preview"></div>
+          <div id="gradient-preview" class="gradient-preview">
+            <span id="gradient-preview-copy" class="gradient-preview-copy"
+              >Copy</span
+            >
+          </div>
           <div class="input-buttons">
             <div class="direction-selector">
               <label for="direction" class="label-names">Direction</label>
@@ -65,10 +72,24 @@
                 <div id="color-two" class="color-two"></div>
               </div>
               <div id="color-wheel-container" class="color-wheel-container">
-                <canvas id="color-wheel" width="150" height="150" class="color-wheel"></canvas>
-                <div id="selected-color-box-container" class="selected-color-box-container">
+                <canvas
+                  id="color-wheel"
+                  width="150"
+                  height="150"
+                  class="color-wheel"
+                ></canvas>
+                <div
+                  id="selected-color-box-container"
+                  class="selected-color-box-container"
+                >
                   <div id="selected-color-box" class="selected-color-box"></div>
-                  <input type="text" value="#1382A8" id="selected-color-text" class="selected-color-text" maxlength="7">
+                  <input
+                    type="text"
+                    value="#1382A8"
+                    id="selected-color-text"
+                    class="selected-color-text"
+                    maxlength="7"
+                  />
                 </div>
               </div>
             </div>
